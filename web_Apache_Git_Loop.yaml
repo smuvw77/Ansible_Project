@@ -1,0 +1,10 @@
+---
+- hosts: webservers
+  become: yes
+
+  tasks:
+  - name: Ensure that Apache and Git is installed
+    yum: name={{ item }} state=present
+    loop:
+      - httpd
+      - git 

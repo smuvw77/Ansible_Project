@@ -1,0 +1,8 @@
+---
+- hosts: webservers
+  sudo: yes
+
+  tasks:
+  - name: Ensure that Apache is installed
+    yum: name=httpd state=present
+    when: ansible_os_family == "RedHat"

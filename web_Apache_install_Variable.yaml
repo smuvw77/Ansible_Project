@@ -1,0 +1,9 @@
+---
+- hosts: webservers
+  sudo: yes
+  vars:
+    software_apache: httpd
+
+  tasks:
+  - name: Ensure that Apache is installed
+    yum: name={{software_apache}} state=present
