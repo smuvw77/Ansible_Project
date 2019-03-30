@@ -2,6 +2,6 @@
 
 
 Tags:
-ansible-playbook playbook_tags.yml
-ansible-playbook playbook_tags.yml --tag "packages"
-ansible-playbook playbook_tags.yml --skip-tag "packages"
+ansible-playbook playbook_tag.yml
+ansible-playbook playbook_tag.yml --tags "packages"
+ansible-playbook playbook_tag.yml --skip-tags "packages"
