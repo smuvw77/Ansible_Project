@@ -1,0 +1,13 @@
+---
+- hosts: apacheweb
+  user: test
+  become: yes
+  connection: ssh
+  gather_facts: no
+  tasks:
+    - name: Install Apache Web Server
+      yum: pkg=httpd state=installed
+      notify: Restart HTTPD
+  handlers:
+    - name: Restart HTTPD
+      service: pkg=httpd state=restarted
