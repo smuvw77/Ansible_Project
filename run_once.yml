@@ -1,0 +1,12 @@
+---
+- hosts: all
+  user: ansadmin
+  become: yes
+  connection: ssh
+  gather_facts: no
+  tasks:
+    - name: Run the uptime command
+      raw: /usr/bin/uptime >> /home/ansadmin/start.log
+    - name: List the /var directory and log in var_dir
+      raw: ls -alt /var >> /home/ansadmin/var_dir.list
+      run_once: true
