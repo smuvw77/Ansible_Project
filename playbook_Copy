@@ -1,7 +1,7 @@
 ---
-- hosts: apacheweb
-  user: test
-  sudo: yes
+- hosts: all
+  user: ansadmin
+  become: yes
   connection: ssh
   gather_facts: no
   tasks:
