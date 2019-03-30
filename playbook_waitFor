@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: Installing Apache Tomcat
+      yum: pkg=tomcat state=installed
+    - name: Waiting for Port 8080 to Listen
+      wait_for:
+        port: 8080
+        state: started
+    - name: Verifying git Installation
+      yum: pkg=git state=present
