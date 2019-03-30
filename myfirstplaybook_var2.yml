@@ -1,0 +1,18 @@
+--- # this is my first playbook
+- hosts: all
+  user: ansadmin
+  become: true
+  connection: ssh
+  gather_facts: no
+  vars:
+   ansible_version1: 2.7
+   software_install: git
+  vars_prompt:
+   - name: gitclient
+     prompt: what software are you installing?
+  tasks:
+   - name: Install git software on host systems using {{ ansible_version1 }}
+     yum: pkg={{ gitclient }}  state=installed
+   - name: Install httpd software on host systems
+     yum: pkg=httpd state=installed
+

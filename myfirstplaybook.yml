@@ -1,0 +1,12 @@
+--- # this is my first playbook
+- hosts: all
+  user: ansadmin
+  become: true
+  connection: ssh
+  gather_facts: no
+  tasks:
+   - name: Install git software on host systems
+     yum: pkg=git state=installed
+   - name: Install httpd software on host systems
+     yum: pkg=httpd state=installed
+

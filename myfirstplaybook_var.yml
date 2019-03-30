@@ -1,0 +1,15 @@
+--- # this is my first playbook
+- hosts: all
+  user: ansadmin
+  become: true
+  connection: ssh
+  gather_facts: no
+  vars:
+   ansible_version1: 2.7
+   software_install: git
+  tasks:
+   - name: Install git software on host systems using {{ ansible_version1 }}
+     yum: pkg={{ software_install }}  state=installed
+   - name: Install httpd software on host systems
+     yum: pkg=httpd state=installed
+
