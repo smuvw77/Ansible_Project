@@ -1,0 +1,18 @@
+---
+- hosts: all
+  user: ansadmin
+  become: yes
+  connection: ssh
+  gather_facts: no
+  tasks:
+    - name: Install the git and httpd packages
+      yum: pkg={{ item }} state=latest
+      with_items:
+        - git
+        - httpd
+      tags:
+        - packages
+    - name: Verify that git was installed
+      raw: yum list installed | grep git > /home/ansadmin/pkg.log
+      tags:
+        - logging
