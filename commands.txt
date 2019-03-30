@@ -1,0 +1,85 @@
+
+# list all the module
+
+$ ansible-doc  -l
+
+# list the yum module help info
+
+$ ansible-doc  yum
+
+
+
+anisble all --list-hosts
+
+# ping comamnd to check webserves host is connecting
+
+ansible webservers -i inventory -m ping
+
+
+# Commands used in Hands-On-Ansible Mod5 Exercise 1
+
+# Install Apache
+$ ansible webservers -i inventory -m yum -a "name=httpd state=present" --sudo
+
+# Start Apache
+$ ansible webservers -i inventory -m service -a "name=httpd enabled=yes state=started" --sudo
+
+
+# Stop Apache
+$ ansible webservers -i inventory -m service -a "name=httpd enabled=yes state=stopped" --sudo
+
+# Install MySQL
+$ ansible dbservers -i inventory -m yum -a "name=mysql-server state=present" --sudo
+
+#check status:
+service mysqld status
+
+# Start MySQL
+$ ansible dbservers -i inventory -m service -a "name=mysqld enabled=yes state=started" --sudo
+
+# Stop IPTables on all systems
+$ ansible webservers:dbservers -i inventory -m service -a "name=iptables enabled=no state=stopped" --sudo
+
+# setup module -> get the facts and we can use as a variables for thsi facts
+ansible web1 -i inventory -m setup
+
+# filter specific facts
+ansible web1 -i inventory -m setup -a "filter=ansible_eth*"
+
+ansible web1 -i inventory -m setup -a "filter=*ipv4*"
+
+# filter specific facts - thsi exampel will show the hard driver and spaces
+ansible web1 -i inventory -m setup -a "filter=ansible_mounts"
+
+# copy the code in setup folder  in ansible server
+
+ansible web1 -i inventory -m setup --tree ./setup
+
+
+ansible web1 -i inventory -m setup | grep distribution
+
+ansible web1 -i inventory -m setup  -a 'filter=ansible_architecture'
+ansible web1 -i inventory -m setup  -a 'filter=ansible_dist*'
+ansible web1 -i inventory -m setup  -a 'filter=ansible_distribution_version'
+
+ansible web1 -i inventory -m setup  -a 'filter=ansible_domain'
+ansible web1 -i inventory -m setup  -a 'filter=ansible_fqdn'
+ansible web1 -i inventory -m setup  -a 'filter=ansible_kernel'
+ansible web1 -i inventory -m setup  -a 'filter=ansiblel_memtotal_mb'
+
+ansible web1 -i inventory -s -m shell -a 'yum list installed | grep python'
+
+ansible web1 -i inventory -s -m shell -a 'yum  install telnet'
+
+ansible web1 -i inventory -s -m shell -a 'yum  install lynx'
+
+ansible web1 -i inventory -s -m shell -a 'cat /var/log/messages.log.out'
+
+validate playbook:
+
+ansible-playbook playbook.yml --check
+
+
+dry Run:
+
+ansible-playbook playbook.yml --check
