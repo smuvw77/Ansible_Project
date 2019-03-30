@@ -1,0 +1,26 @@
+--- # Outline to playbook Translation
+- hosts: webservers
+  user: ansadmin
+  become: yes
+  gather_facts: no
+  
+  tasks:
+    - name: date/time stamp for when the playbook start
+      raw: /usr/bin/date > /home/ansadmin/playbook_start.log
+    - name: Install Appache web browser
+      yum: pkg=httpd state=installed
+    - name: start the web server
+      service: name=httpd state=restarted
+    - name: Verify that the web service is running
+      command: systemctl status httpd
+      register: result
+    - debug: var=result
+    - name: install client softwares - Git
+      yum: pkg=git state=installed
+    - name: log all the packages install on the system
+      raw: yum list installed  > /home/ansadmin/installed.log
+    - name: date/time stamp for when the playbook stop
+      raw: /usr/bin/date > /home/ansadmin/playbook_stop.log
+      
+    
+      
