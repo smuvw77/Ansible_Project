@@ -9,5 +9,6 @@
       yum: pkg=httpd state=installed
       notify: Restart HTTPD
   handlers:
-    - name: Restart HTTPD
-      service: pkg=httpd state=restarted
+  service:
+    name: httpd
+    state: started
