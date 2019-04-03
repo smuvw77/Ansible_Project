@@ -1,0 +1,32 @@
+Order-of-Operations (Precedence)
+1). (Group_Vars) All
+2). (Group_Vars) GroupName
+3). (Host_Vars) HostName
+
+
+create 
+group_vars folder
+   all  
+   GroupName  (Ex: webservers)
+
+host_vars folder
+     HostName (Ex: web) 
+     
+ ---
+ username: sri
+ 
+1.#this will take username from all from grpup_vars - username variable
+ansible webservers -i inventry_prod  -m user -a "name={{username}} password=devops"  --sudo
+
+
+
+2.#this will take username from webservers group vars -  username variable
+create webserves  file in group vars folder 
+ansible webservers -i inventry_prod  -m user -a "name={{username}} password=devops"  --sudo
+
+
+
+
+2.#this will take username from web1 ->hosts_vars group  -  username variable
+create webserves  file in group vars folder 
+ansible webservers -i inventry_prod  -m user -a "name={{username}} password=devops"  --sudo
