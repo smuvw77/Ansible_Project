@@ -1,0 +1,27 @@
+1.ansible all -m ping
+
+
+2.ansible all -a "hostname"
+
+Ansible will run this command against all three of the servers, and return the results (if Ansible
+can’t reach one a server, it will show an error for that server, but continue running the command on
+the others).
+
+
+3. ansible all -a "hostname" -f 1
+Purpose:
+Run the same command again, but this time, add the argument -f 1 to tell Ansible to use only one
+fork (basically, to perform the command on each server in sequence):
+
+4. ansible all -a "df -h"
+
+make sure the servers have disk space available for our application
+
+
+5. ansible all -a "free -m"
+
+let’s also make sure there is enough memory on our servers
+
+6. ansible all -a "date"
+
+let’s make sure the date and time on each server is in sync:
