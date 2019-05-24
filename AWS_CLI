@@ -37,3 +37,16 @@ aws iam create-group --group-name Prod
 
 
 aws iam add-user-to-group --user-name Ramya --group-name Prod
+
+
+Security Group:
+*************
+aws ec2 create-security-group --group-name Ansile_group --description "Ansile_group"
+
+VPC:
+*****
+
+
+Key-Pair:
+*********
+
