@@ -1,5 +1,6 @@
-1.Launch EC2:
+EC2:
 
+1.Launch EC2:
 
 
 aws ec2 run-instances --image-id ami-04768381bf606e2b3 --count 1 --instance-type t2.micro --key-name DevOps_Key_vara --security-group-ids sg-0109d0012bc2269f6 --subnet-id subnet-39ec3075
@@ -20,3 +21,19 @@ aws ec2 create-tags --resources i-091ff112e8d7cda45 --tags Key=Name,Value=Srini
 
 
 aws ec2 terminate-instances --instance-ids i-091ff112e8d7cda45
+
+
+
+IAM:
+*****
+
+aws iam create-user --user-name Ramya
+
+
+aws iam create-login-profile --user-name Ramya --password test123 --no-password-reset-required
+
+
+aws iam create-group --group-name Prod
+
+
+aws iam add-user-to-group --user-name Ramya --group-name Prod
