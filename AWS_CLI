@@ -1,0 +1,22 @@
+1.Launch EC2:
+
+
+
+aws ec2 run-instances --image-id ami-04768381bf606e2b3 --count 1 --instance-type t2.micro --key-name DevOps_Key_vara --security-group-ids sg-0109d0012bc2269f6 --subnet-id subnet-39ec3075
+
+
+2.List instances:
+aws ec2 describe-instances
+aws ec2 describe-instances --filters "Name=instance-type,Values=t2.micro"
+aws ec2 describe-instances --instance-ids i-091ff112e8d7cda45
+
+3.Adding a Tag to Your Instance
+
+aws ec2 create-tags --resources i-091ff112e8d7cda45 --tags Key=Name,Value=Srini
+
+
+
+ 4.Terminate instance
+
+
+aws ec2 terminate-instances --instance-ids i-091ff112e8d7cda45
