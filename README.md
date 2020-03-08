@@ -24,3 +24,8 @@ ansible-playbook name.yml --ask-vault-pass
 ansible-playbook name.yml  --start-at="Install Git" (name of the TASK)
 
 ansible-playbook name.yml  --step (  should be prompted for each task run)
+
+
+kitchen.yml
+export AWS_SSH_KEY_ID="EC2_0308"
+export AWS_SSH_KEY="/home/cloud_user/.aws/$AWS_SSH_KEY_ID.pem"
