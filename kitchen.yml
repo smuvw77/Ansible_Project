@@ -1,0 +1,30 @@
+---
+driver:
+  require_chef_omnibus: true
+  name: ec2
+  instance_type: t2.micro
+  aws_ssh_key_id: "<%= ENV['AWS_SSH_KEY_ID']%>"
+  virtualization-type: hvm
+
+transport:
+  ssh_key: "<%= ENV['AWS_SSH_KEY']%>"
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: centos65
+    driver:
+      image_id: ami-0e2ff28bfb72a4e45
+      region: us-east-1
+      availability_zone: us-east-1c
+      virtualization-type: hvm
+
+transport:
+  ssh_key: "<%= ENV['AWS_SSH_KEY']%>"
+  username: ec2-user
+
+suites:
+  - name: default
+    run_list:
+    attributes:
