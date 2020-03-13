@@ -29,3 +29,14 @@ ansible-playbook name.yml  --step (  should be prompted for each task run)
 kitchen.yml
 export AWS_SSH_KEY_ID="EC2_0308"
 export AWS_SSH_KEY="/home/cloud_user/.aws/$AWS_SSH_KEY_ID.pem"
+
+Steps: 
+ 1. login:  ssh ec2_user@publicip
+ 2.Crete AWS and get teh Access key and security access key 
+ 3. create new key pair 
+ 4. update key pair .aws/cred adn chmod 400 k
+ 5.run  below commands use same key pair name EC2_0308
+ 
+      export AWS_SSH_KEY_ID="EC2_0308" 
+ export AWS_SSH_KEY="/home/cloud_user/.aws/$AWS_SSH_KEY_ID.pem"
+ 
