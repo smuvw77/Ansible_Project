@@ -23,7 +23,7 @@ String str= kitchen_log.toString()
        
         Pattern pattern = Pattern.compile(REGEX); 
   
-        Matcher matcher = pattern.matcher(actualString)
+        Matcher matcher = pattern.matcher(str)
   
    
         boolean matches = matcher.matches()
