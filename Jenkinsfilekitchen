@@ -12,10 +12,25 @@ stage("readfile"){
 
 String str= kitchen_log.toString()
 
-println str
-String hostname = str.subString(str.subString("Instance").length, str.subString(">").length) 
 
-println hostname
+     String REGEX = ".*Instance.*"; 
+  
+        
+          Pattern pattern = Pattern.compile(REGEX); 
+  
+        // get a matcher object from pattern 
+        Matcher matcher = pattern.matcher(str); 
+  
+       boolean matches = matcher.matches(); 
+  
+        System.out.println("str "
+                           + "contains REGEX = "
+                           + matches); 
+
+//println str
+//String hostname = str.subString(str.subString("Instance").length, str.subString(">").length) 
+
+//println hostname
 
 
 }
