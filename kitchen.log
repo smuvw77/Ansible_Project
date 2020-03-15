@@ -1,0 +1,25 @@
+I, [2020-03-15T00:50:31.529378 #2910]  INFO -- default-centos65: -----> Creating <default-centos65>...
+I, [2020-03-15T00:50:32.008428 #2910]  INFO -- default-centos65: Detected platform: amazon version 2018.03. on x86_64. Instance Type: t2.micro. Default username: ec2-user (default).
+I, [2020-03-15T00:50:32.008565 #2910]  INFO -- default-centos65: If you are not using an account that qualifies under the AWS
+free-tier, you may be charged to run these suites. The charge
+should be minimal, but neither Test Kitchen nor its maintainers
+are responsible for your incurred costs.
+
+I, [2020-03-15T00:50:32.369910 #2910]  INFO -- default-centos65: Created automatic security group sg-0e94e19468e428b7d
+I, [2020-03-15T00:50:34.053000 #2910]  INFO -- default-centos65: Instance <i-00469b65ef1bd39e2> requested.
+I, [2020-03-15T00:50:34.053141 #2910]  INFO -- default-centos65: Polling AWS for existence, attempt 0...
+I, [2020-03-15T00:50:34.245949 #2910]  INFO -- default-centos65: Attempting to tag the instance, 0 retries
+I, [2020-03-15T00:50:34.613070 #2910]  INFO -- default-centos65: EC2 instance <i-00469b65ef1bd39e2> created.
+I, [2020-03-15T00:50:34.613196 #2910]  INFO -- default-centos65: Waited 0/300s for instance <i-00469b65ef1bd39e2> volumes to be ready.
+I, [2020-03-15T00:50:35.530549 #2910]  INFO -- default-centos65: Waited 0/300s for instance <i-00469b65ef1bd39e2> to become ready.
+I, [2020-03-15T00:50:40.803146 #2910]  INFO -- default-centos65: Waited 5/300s for instance <i-00469b65ef1bd39e2> to become ready.
+I, [2020-03-15T00:50:46.330013 #2910]  INFO -- default-centos65: Waited 10/300s for instance <i-00469b65ef1bd39e2> to become ready.
+I, [2020-03-15T00:50:51.845884 #2910]  INFO -- default-centos65: Waited 15/300s for instance <i-00469b65ef1bd39e2> to become ready.
+I, [2020-03-15T00:50:57.334419 #2910]  INFO -- default-centos65: Waited 20/300s for instance <i-00469b65ef1bd39e2> to become ready.
+I, [2020-03-15T00:51:02.909386 #2910]  INFO -- default-centos65: Waited 25/300s for instance <i-00469b65ef1bd39e2> to become ready.
+I, [2020-03-15T00:51:03.272877 #2910]  INFO -- default-centos65: EC2 instance <i-00469b65ef1bd39e2> ready (hostname: ec2-54-167-187-139.compute-1.amazonaws.com).
+I, [2020-03-15T00:51:03.503378 #2910]  INFO -- default-centos65: Waiting for SSH service on ec2-54-167-187-139.compute-1.amazonaws.com:22, retrying in 3 seconds
+I, [2020-03-15T00:51:06.610501 #2910]  INFO -- default-centos65: Waiting for SSH service on ec2-54-167-187-139.compute-1.amazonaws.com:22, retrying in 3 seconds
+I, [2020-03-15T00:51:09.685936 #2910]  INFO -- default-centos65: Waiting for SSH service on ec2-54-167-187-139.compute-1.amazonaws.com:22, retrying in 3 seconds
+I, [2020-03-15T00:51:13.888774 #2910]  INFO -- default-centos65: [SSH] Established
+I, [2020-03-15T00:51:14.227819 #2910]  INFO -- default-centos65: Finished creating <default-centos65> (0m42.70s).
