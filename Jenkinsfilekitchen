@@ -12,7 +12,9 @@ stage("readfile"){
 
 String str= kitchen_log.toString()
 
-println str
+String hostname = str.subString(str.subString("Instance").length, str.subString(">").length) 
+
+println hostname
 
 
 }
