@@ -10,7 +10,7 @@ stage("readfile"){
 
   def kitchen_log = readFile 'kitchen.log'
 
-Strign str= kitchen_log.toString()
+String str= kitchen_log.toString()
 }
 
 }
