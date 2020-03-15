@@ -11,6 +11,8 @@ stage("readfile"){
   def kitchen_log = readFile 'kitchen.log'
 
 String str= kitchen_log.toString()
+
+println str
 }
 
 }
