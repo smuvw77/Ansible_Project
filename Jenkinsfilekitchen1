@@ -10,20 +10,19 @@ stage("checkout"){
 
 stage("readfile"){
 
-  def kitchen_log = readFile 'kitchen.log'
-
-String str= kitchen_log.toString()
-
-
         String REGEX = "www"
   
         
-        String actualString  = "www.geeksforgeeks.org";
+        String actualString  = "www.geeksforgeeks.org"
+        
+          def kitchen_log = readFile 'kitchen.log'
+
+         String actstr= kitchen_log.toString()
   
        
         Pattern pattern = Pattern.compile(REGEX); 
   
-        Matcher matcher = pattern.matcher(str)
+        Matcher matcher = pattern.matcher(actstr)
   
    
         boolean matches = matcher.matches()
