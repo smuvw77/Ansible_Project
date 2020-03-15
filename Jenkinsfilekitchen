@@ -15,7 +15,7 @@ stage("readfile"){
 String str= kitchen_log.toString()
 
 
-     String REGEX = ".*Instance.*"; 
+     String REGEX = "*Instance*"; 
   
         
           Pattern pattern = Pattern.compile(REGEX); 
