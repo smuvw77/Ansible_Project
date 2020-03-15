@@ -15,7 +15,7 @@ stage("readfile"){
 String str= kitchen_log.toString()
 
 
-        String REGEX = ".*www*"
+        String REGEX = "www"
   
         
         String actualString  = "www.geeksforgeeks.org";
