@@ -1,0 +1,36 @@
+import java.util.regex.*; 
+
+node(){
+
+stage("checkout"){
+
+ checkout scm
+ 
+}
+
+stage("readfile"){
+
+  def kitchen_log = readFile 'kitchen.log'
+
+String str= kitchen_log.toString()
+
+
+        String REGEX = ".*www.*"
+  
+        
+        String actualString  = "www.geeksforgeeks.org";
+  
+       
+        Pattern pattern = Pattern.compile(REGEX); 
+  
+        Matcher matcher = pattern.matcher(actualString)
+  
+   
+        boolean matches = matcher.matches()
+  
+      println matches 
+
+
+}
+
+}
